@@ -19,17 +19,6 @@ export const Login = () => {
     navigate("/");
   };
 
-  const myStyle = {
-    backgroundColor: "#508bfc",
-    borderRadius: "1rem",
-  };
-  const myStyle2 = {
-    backgroundColor: "#dd4b39",
-  };
-  const myStyle3 = {
-    backgroundColor: "#dd4b39",
-  };
-
   return (
     <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
       <MDBInput
