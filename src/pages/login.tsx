@@ -70,7 +70,7 @@ export const Login = () => {
       </div>
       <div>
         {/* <p>Sign in with Google to Continue</p> */}
-        <button className="btn btn-primary" onClick={signInWithGoogle}>
+        <button className="btn btn-danger" onClick={signInWithGoogle}>
           Sign in with Google
         </button>
       </div>
