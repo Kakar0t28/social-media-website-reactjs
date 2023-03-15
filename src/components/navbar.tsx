@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-import { auth } from "../config/firebase";
+import { auth, provider } from "../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import { async } from "@firebase/util";
+import { MDBBtn, MDBIcon } from "mdb-react-ui-kit";
+import React from "react";
+import { signInWithPopup } from "firebase/auth";
 
 export const Navbar = () => {
   const [user] = useAuthState(auth);

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { string } from "yup";
 import { db } from "../../config/firebase";
 import { Post } from "./post";
+import "bootstrap/dist/css/bootstrap.css";
 
 export interface Post {
   id: string;
