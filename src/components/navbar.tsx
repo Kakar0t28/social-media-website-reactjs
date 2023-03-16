@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { auth, provider } from "../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
@@ -14,36 +13,20 @@ import {
   MDBCollapse,
 } from "mdb-react-ui-kit";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
+  const logoutNavigate = useNavigate();
+
   const [user] = useAuthState(auth);
 
   const userOut = async () => {
     await signOut(auth);
+    logoutNavigate("/login");
   };
   const [showNavColor, setShowNavColor] = useState(false);
 
   return (
-    // <div className="navbar">
-    //   <div className="links">
-    //     <Link to="/"> Main </Link>
-    //     {!user ? (
-    //       <Link to="/login"> Login </Link>
-    //     ) : (
-    //       <Link to="/createpost"> Create Post </Link>
-    //     )}
-    //   </div>
-
-    // <div className="user">
-    //   {user && (
-    //     <>
-    //       <p> {user?.displayName} </p>
-    //       <img src={user?.photoURL || ""} width="20" height="20" />
-    //       <button onClick={userOut}> Log-out </button>
-    //     </>
-    //   )}
-    // </div>
-    // </div>
     <MDBNavbar expand="lg" dark bgColor="primary">
       <MDBContainer fluid>
         <MDBNavbarBrand href="/">Social Media Website</MDBNavbarBrand>
@@ -74,16 +57,16 @@ export const Navbar = () => {
               </MDBNavbarItem>
             )}
           </MDBNavbarNav>
-          <div className="user">
-            {user && (
-              <>
-                <p> {user?.displayName} </p>
-                <img src={user?.photoURL || ""} width="20" height="20" />
-                <button onClick={userOut}> Log-out </button>
-              </>
-            )}
-          </div>
         </MDBCollapse>
+        <div className="user">
+          {user && (
+            <>
+              <p> {user?.displayName} </p>
+              <img src={user?.photoURL || ""} width="20" height="20" />
+              <button onClick={userOut}> Log-out </button>
+            </>
+          )}
+        </div>
       </MDBContainer>
     </MDBNavbar>
   );
