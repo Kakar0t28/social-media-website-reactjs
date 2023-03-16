@@ -60,7 +60,13 @@ export const Login = () => {
       <div>
         {/* <p>Sign in with Google to Continue</p> */}
         <button className="btn btn-danger" onClick={signInWithGoogle}>
-          Sign in with Google
+          Google
+        </button>
+        <button className="btn btn-primary" onClick={signInWithGoogle}>
+          Facebook
+        </button>
+        <button className="btn btn-dark" onClick={signInWithGoogle}>
+          GitHub
         </button>
       </div>
     </MDBContainer>
