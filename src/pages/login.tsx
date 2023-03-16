@@ -18,6 +18,12 @@ export const Login = () => {
     console.log(result);
     navigate("/");
   };
+  const signInWithFaceBook = async () => {
+    navigate("/");
+  };
+  const signInWithGitHub = async () => {
+    navigate("/");
+  };
 
   return (
     <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
@@ -62,10 +68,10 @@ export const Login = () => {
         <button className="btn btn-danger" onClick={signInWithGoogle}>
           Google
         </button>
-        <button className="btn btn-primary" onClick={signInWithGoogle}>
+        <button className="btn btn-primary" onClick={signInWithFaceBook}>
           Facebook
         </button>
-        <button className="btn btn-dark" onClick={signInWithGoogle}>
+        <button className="btn btn-dark" onClick={signInWithGitHub}>
           GitHub
         </button>
       </div>
